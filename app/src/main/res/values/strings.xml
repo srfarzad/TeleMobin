@@ -1,3 +1,44 @@
 <resources>
     <string name="app_name">TeleMobin</string>
+
+    <string name="best_videos">برترین ویدئوها</string>
+    <string name="new_videos">جدیدترین ویدئوها</string>
+    <string name="suggestion">پیشنهاد ما</string>
+    <string name="sports">ورزشی</string>
+
+    <string name="all">همه</string>
+
+    <string name="iran">ایران</string>
+
+    <string-array name="countris">
+
+        <item>@string/iran</item>
+        <item>ترکیه</item>
+        <item>یونان</item>
+        <item>آلمان</item>
+
+    </string-array>
+
+    <string name="app_title">تله موبین</string>
+
+
+    <string name="female">زن</string>
+    <string name="male">مرد</string>
+
+    <string-array name="jensiat">
+
+        <item>@string/female</item>
+        <item>@string/male</item>
+
+
+    </string-array>
+
+    <string name="about">درباره ما</string>
+    <string name="contact">تماس با ما</string>
+    <string name="exit">بستن</string>
+    <string name="website">وب سایت</string>
+    <string name="search">جستجو</string>
+
+
+
 </resources>
