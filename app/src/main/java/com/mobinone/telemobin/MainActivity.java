@@ -1,8 +1,14 @@
 package com.mobinone.telemobin;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
 
+    NavigationView navigation_view;
+
+    DrawerLayout drawer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
             getSupportActionBar().setTitle("");
 
+        navigation_view=findViewById(R.id.navigation_view);
+        drawer=findViewById(R.id.drawer);
         ImageView img=findViewById(R.id.img_slider);
 
         TextView txt_best_videos=findViewById(R.id.txt_best_videos);
@@ -62,6 +74,51 @@ public class MainActivity extends AppCompatActivity {
 
 
         Log.e("LifeCycle","OnCreate");
+
+        navigation_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
+                switch (item.getItemId()){
+
+                    case R.id.item_joing_tl:
+
+                        Intent intent=new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://tl.me/p30droid"));
+
+                        startActivity(intent);
+
+                        break;
+
+                    case R.id.item_login:
+
+
+                        DialogUtils.onLogin(MainActivity.this);
+
+
+                        break;
+
+
+
+
+
+                }
+
+                return false;
+            }
+        });
+
+
+        ActionBarDrawerToggle actionBr=new
+                ActionBarDrawerToggle(MainActivity.this,
+                drawer,toolbar,R.string.open,R.string.close);
+
+
+        actionBr.syncState();
+
+
+
 
     }
 
@@ -156,5 +213,42 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder alert=new
+                AlertDialog.Builder(MainActivity.this);
+
+        alert.setTitle(getResources().getString(R.string.exit_title));
+        alert.setMessage(getResources().getString(
+                R.string.exit_message
+        ));
+
+        alert.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+        alert.setPositiveButton(getResources().getString(
+                R.string.yes
+        ), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+
+        alert.setNeutralButton(getResources().getString(R.string.no), new
+                DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                MainActivity.super.onBackPressed();
+            }
+        });
+
+
+
+                alert.show();
+        //super.onBackPressed();
     }
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_register"
+        android:title="@string/register"
+        />
+
+    <item
+        android:id="@+id/item_login"
+        android:title="@string/login"
+        />
+
+
+    <item
+        android:id="@+id/item_contact_us"
+        android:title="@string/contact_us"
+        />
+
+
+    <item
+        android:id="@+id/item_joing_tl"
+        android:title="@string/join"
+        />
+
+
+</menu>

@@ -39,6 +39,26 @@
     <string name="website">وب سایت</string>
     <string name="search">جستجو</string>
 
+    <string name="register">عضویت</string>
+    <string name="login">ورود</string>
+    <string name="contact_us">تماس با ما</string>
+    <string name="join">جوین تلگرام</string>
+
+    <string name="home">خانه</string>
+    <string name="favorite">علاقه مندی</string>
+    <string name="profile">پروفایل</string>
+
+
+    <string name="close">بستن</string>
+    <string name="open">باز کردن</string>
+    <string name="exit_title">خروج</string>
+    <string name="exit_message">آیا مطمئن هستید؟</string>
+    <string name="yes">باشه میمونم</string>
+    <string name="no">بای</string>
+
+    <string name="login_succefull">شما با موفقیت وارد شدید</string>
+
+    <string name="errot_login">خطا در ورود</string>
 
 
 </resources>

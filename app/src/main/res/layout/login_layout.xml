@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="140dp">
 
 
 
@@ -16,39 +15,21 @@
 
 
         <LinearLayout
-            android:background="#913737"
-            android:gravity="left|center"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <ImageView
-                android:background="@drawable/ios"
-                android:layout_width="32dp"
-                android:layout_height="32dp" />
-
-
-            <TextView
-                android:layout_marginLeft="16dp"
-                android:text="ورود"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
 
             <TextView
+
                 android:text="username"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content" />
 
             <EditText
+                android:id="@+id/edt_username"
+                android:drawableRight="@drawable/ic_favorite_border_black_24dp"
+                android:background="@drawable/card_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -63,12 +44,37 @@
 
             <TextView
                 android:text="pass"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content" />
 
             <EditText
+                android:id="@+id/edt_password"
+                android:drawableRight="@drawable/ic_home_black_24dp"
+                android:background="@drawable/card_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_login"
+                android:text="@string/login"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+
+            <Button
+                android:text="@string/close"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
 
         </LinearLayout>
 
