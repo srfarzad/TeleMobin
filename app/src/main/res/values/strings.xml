@@ -60,5 +60,11 @@
 
     <string name="errot_login">خطا در ورود</string>
 
+    <string name="register_succefull">شما با موفقیت عضو شدید</string>
+
+    <string name="register_error">خطا در عضویت</string>
+
+
+
 
 </resources>

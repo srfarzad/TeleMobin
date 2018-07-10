@@ -20,6 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mobinone.telemobin.activities.RegisterActivity;
+import com.mobinone.telemobin.database.TelemobinDb;
+
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -39,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
             setSupportActionBar(toolbar);
 
             getSupportActionBar().setTitle("");
+
+
+            TelemobinDb telemobinDb=new TelemobinDb(getApplicationContext());
 
         navigation_view=findViewById(R.id.navigation_view);
         drawer=findViewById(R.id.drawer);
@@ -96,6 +102,15 @@ public class MainActivity extends AppCompatActivity {
 
                         DialogUtils.onLogin(MainActivity.this);
 
+
+                        break;
+
+                    case R.id.item_register:
+
+                        Intent intent_register=new Intent(getApplicationContext(),
+                                RegisterActivity.class);
+
+                        startActivity(intent_register);
 
                         break;
 

@@ -8,12 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.mobinone.telemobin.database.UserDbAdapter;
+import com.mobinone.telemobin.models.Users;
+
 public class DialogUtils {
 
 
     public static void onLogin(final Activity activity){
 
 
+       final UserDbAdapter userDbAdapter=new UserDbAdapter(activity);
 
         AlertDialog.Builder loginDialog=new
                 AlertDialog.Builder(activity);
@@ -38,11 +42,15 @@ public class DialogUtils {
             public void onClick(View view) {
 
 
-                String user=edt_username.getText().toString();
+                String username=edt_username.getText().toString();
 
                 String pass=edt_password.getText().toString();
 
-                if(user.equals("android") && pass.equals("123")){
+                Users users=new Users();
+                users.setUserName(username);
+                users.setPassword(pass);
+
+                if(userDbAdapter.login(users)>0){
 
                     Toast.makeText(activity,activity.getResources().getString(R.string.login_succefull),Toast.LENGTH_LONG).show();
 
